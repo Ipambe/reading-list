@@ -1,0 +1,125 @@
+.select-genre {
+  width: 25%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 8px;
+  background-color: #4a4a4a;
+  border: none;
+  color: var(--textColor);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #2d2d2d;
+  }
+}
+
+.available-section {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+
+    li {
+      list-style: none;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &.lecture {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+          opacity: 0.8;
+
+          + h3 {
+            opacity: 0;
+          }
+        }
+      }
+
+      h3 {
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--scrollBar);
+        }
+      }
+    }
+  }
+}
+
+.lecture-books {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  li {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    column-gap: 10px;
+    translate: 0;
+    transition: translate 0.3s ease, display 0.3s ease;
+
+    @starting-style {
+      translate: 100%;
+    }
+
+    img {
+      height: 100%;
+    }
+
+    span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+      width: 100%;
+
+      :hover {
+        cursor: pointer;
+        color: var(--scrollBar);
+      }
+
+      h3 {
+        color: var(--textColor);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+      }
+      small {
+        font-size: 0.8rem;
+        color: var(--scrollBar);
+      }
+    }
+    button {
+      background-color: var(--scrollBar);
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #a3b1b7;
+      }
+    }
+  }
+}

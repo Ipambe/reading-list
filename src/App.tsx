@@ -1,7 +1,16 @@
-function App () {
+import { Route, Routes } from 'react-router-dom'
+import { Main } from './pages/Main'
+import { NavBar } from './components/NavBar'
+import { Book } from './pages/Book'
+
+function App() {
   return (
     <>
-      <h1>App</h1>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='book/:id' element={<Book />} />
+      </Routes>
     </>
   )
 }
